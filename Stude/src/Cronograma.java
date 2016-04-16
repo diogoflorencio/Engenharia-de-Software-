@@ -19,8 +19,6 @@ public class Cronograma {
 
 	private Usuario usuario;
 
-	private Stude stude;
-
-	private Metodo de Estudo metodo de Estudo;
+	private MetodoDeEstudo metodoDeEstudo;
 
 }

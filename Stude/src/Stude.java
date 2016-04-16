@@ -8,8 +8,6 @@ public class Stude {
 
 	private Cronograma cronograma;
 
-	private Cronograma cronograma;
-
-	private Metodo de Estudo metodo de Estudo;
+	private MetodoDeEstudo metododeEstudo;
 
 }

@@ -1,4 +1,4 @@
-public enum Situação {
+public enum Situacao {
 
 	;
 

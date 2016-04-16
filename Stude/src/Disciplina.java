@@ -1,8 +1,10 @@
+import java.util.List;
+
 public class Disciplina {
 
-	private Integer List<Integer> notas;
+	private List<Integer> notas;
 
-	private Situação situacao;
+	private Situacao situacao;
 
 	private String cor;
 
