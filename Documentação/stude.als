@@ -1,22 +1,38 @@
-module SistemaDePermissão
+module Stude
 
-abstract sig disciplina{}
-sig portugues, matematica, ingles, fisica, quimica extends disciplina{}
+sig Disciplina{}
 
-one sig cronometro, cronograma, desempenho{} 
+one sig Cronometro{} 
 
-one sig usuario{
-	estuda: disciplina,
-	cronometro: cronometro,
-	metodoDeEstudo: metodoDeEstudo 
+one sig Cronograma{
+			estudar: set Disciplina
 }
 
-one abstract sig metodoDeEstudo{}
-sig regular extends metodoDeEstudo{}
-sig avancado extends metodoDeEstudo{}
+one sig Desempenho{
+			horasEstudadas: Disciplina,
+			meta : MetodoDeEstudo
+}
+
+one abstract sig MetodoDeEstudo{
+	defineTempoDeEstudo: Cronometro
+}
+
+sig Regular extends MetodoDeEstudo{}
+sig Avancado extends MetodoDeEstudo{}
+
+one sig Usuario{
+	cronogramaDeEstudo:Cronograma,
+	tempoDeEstudo: Cronometro,
+	metodoDeEstudo: MetodoDeEstudo,
+	evolucao: Desempenho
+}
+
+
 
 fact{
-	all d: disciplina, u: usuario| d in u.estuda
+	all d: Disciplina, u: Usuario| d in u.cronogramaDeEstudo.estudar
+//	all d: Disciplina, des: Desempenho, u: Usuario |  d in u.cronogramaDeEstudo.estudar =>  d in des.horasEstudadas
+	
 }
 
 //check teste
