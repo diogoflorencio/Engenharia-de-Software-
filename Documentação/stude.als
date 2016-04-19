@@ -2,6 +2,8 @@ module Stude
 
 sig Disciplina{}
 
+one sig Usuario{}
+
 one sig Cronometro{} 
 
 one sig Cronograma{
@@ -9,8 +11,7 @@ one sig Cronograma{
 }
 
 one sig Desempenho{
-			horasEstudadas: Disciplina,
-			meta : MetodoDeEstudo
+			horasDeEstudo: set Disciplina
 }
 
 one abstract sig MetodoDeEstudo{
@@ -20,21 +21,27 @@ one abstract sig MetodoDeEstudo{
 sig Regular extends MetodoDeEstudo{}
 sig Avancado extends MetodoDeEstudo{}
 
-one sig Usuario{
+one sig Stude{
+	usuario: Usuario,
 	cronogramaDeEstudo:Cronograma,
 	tempoDeEstudo: Cronometro,
 	metodoDeEstudo: MetodoDeEstudo,
-	evolucao: Desempenho
+	horasEstudadas/disciplina: Desempenho
 }
 
-
-
 fact{
-	all d: Disciplina, u: Usuario| d in u.cronogramaDeEstudo.estudar
-//	all d: Disciplina, des: Desempenho, u: Usuario |  d in u.cronogramaDeEstudo.estudar =>  d in des.horasEstudadas
+	all d: Disciplina, c: Cronograma| d in c.estudar
+	all d: Disciplina, des: Desempenho|  d in des.horasDeEstudo
 	
 }
 
-//check teste
+assert teste{
+  	all d: Disciplina, c: Cronograma | d in c.estudar
+	all d: Disciplina, des: Desempenho | d in des.horasDeEstudo
+	all u: Usuario, s: Stude | u in s.usuario
+	all d: Desempenho, c: Cronograma | d.horasDeEstudo = c.estudar
+}
+
+check teste
 pred show[]{}
-run show for 5 //but 15 Times
+run show for 8 //but 15 Times
