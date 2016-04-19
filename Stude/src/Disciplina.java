@@ -65,7 +65,7 @@ public class Disciplina extends Exception{
 
 	public double calculaMedia() {
 		for (Integer inteiro : notas) {
-				media += inteiro;
+			media += inteiro;
 		}
 
 		media /= notas.size();
