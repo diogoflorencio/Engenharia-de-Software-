@@ -30,7 +30,7 @@ public class Cronograma {
 	
 	public void removeDisciplina(Disciplina d) throws Exception{
 		if(!disciplinas.contains(d)) throw new Exception("Disciplina inexistente");
-		disciplinas.add(d);
+		disciplinas.remove(d);
 	}
 	public void setDisciplina(Disciplina d) throws Exception{
 		removeDisciplina(d);
