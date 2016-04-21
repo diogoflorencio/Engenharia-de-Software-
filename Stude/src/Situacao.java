@@ -1,9 +1,3 @@
 public enum Situacao {
-
-	;
-
-	private String EmCurso;
-
-	private String Concluida;
-
+	EM_CURSO, CONCLUIDA;
 }
