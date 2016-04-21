@@ -8,13 +8,19 @@ public class Regular implements MetodoDeEstudo {
 		intervalo = 5;
 		tempoDeEstudo = 15;
 	}
-
+	@Override
 	public int getIntervalo(){
 		return intervalo;
 	}
-	
-	public int getTempoDeEstudo(){
+
+	@Override
+	public int getTempo() {
 		return tempoDeEstudo;
+	}
+	
+	@Override
+	public String toString(){
+		return "Metodo de estudo regular";
 	}
 
 }
