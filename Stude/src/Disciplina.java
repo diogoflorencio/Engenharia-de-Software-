@@ -9,12 +9,12 @@ public class Disciplina extends Exception{
 	private String cor;
 	private String nome;
 	
-	public Disciplina(String nome) throws Exception{
+	public Disciplina(String nome, String cor) throws Exception{
 		if(!testaString(nome)) throw new Exception("Nome da disciplina invalido");
 		this.nome = nome;
 		notas = new ArrayList<Double>();
 		situacao = Situacao.EM_CURSO;
-		cor = "";
+		this.cor = cor;
 		horasEstudadas = 0;
 	}
 	
