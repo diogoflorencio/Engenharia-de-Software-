@@ -32,4 +32,8 @@ public class Cronograma {
 		if(!disciplinas.contains(d)) throw new Exception("Disciplina inexistente");
 		disciplinas.add(d);
 	}
+	public void setDisciplina(Disciplina d) throws Exception{
+		removeDisciplina(d);
+		addDisciplina(d);
+	}
 }
