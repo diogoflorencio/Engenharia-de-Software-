@@ -2,16 +2,18 @@ public class Avancado implements MetodoDeEstudo {
 
 	private int intervalo;
 
-	private int tempo;
-
-	private MetodoDeEstudo metodoDeEstudo;
-
-	public void setTempo(int tempo) {
-
+	private int tempoDeEstudo;
+ 
+	public Avancado(){
+		intervalo = 10;
+		tempoDeEstudo = 30;
+	}
+	
+	public int getTempo() {
+		return tempoDeEstudo;
 	}
 
-	public void setIntervalo(int  tempo) {
-
+	public int getIntervalo() {
+		return intervalo;
 	}
-
 }
