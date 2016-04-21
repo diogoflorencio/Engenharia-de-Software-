@@ -1,13 +1,16 @@
-import java.util.Calendar;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Usuario {
 
 	private String nome;
 
-	private Calendar dataDeIngresso;
+	private String dataDeIngresso;
 	
 	public Usuario(String nome) throws Exception{
 		if(!testaString(nome)) throw new Exception("Nome da disciplina invalido");
+		this.nome = nome;
+		insereData();
 	};
 
 	public String getNome() {
@@ -18,11 +21,16 @@ public class Usuario {
 		this.nome = nome;
 	}
 
-	public Calendar getDataDeIngresso() {
+	public String getDataDeIngresso() {
 		return dataDeIngresso;
 	}
 
 	public boolean testaString(String string) {
 		return !(string == null || string.trim().equals(""));
+	}
+	
+	private void insereData(){
+		SimpleDateFormat dt = new SimpleDateFormat("dd/MM/yyyy");
+		dataDeIngresso = dt.format(new Date());
 	}
 }
