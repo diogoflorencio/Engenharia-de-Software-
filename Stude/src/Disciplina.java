@@ -74,4 +74,8 @@ public class Disciplina extends Exception{
 	public boolean testaString(String string) {
 		return !(string == null || string.trim().equals(""));
 	}
+	@Override
+	public String toString(){
+		return nome;
+	}
 }
