@@ -1,21 +1,28 @@
-import java.util.Map;
 import java.util.Calendar;
-import java.util.Collection;
 
 public class Usuario {
-
-	private Map<Calendar,Calendar> horasEstudadas;
 
 	private String nome;
 
 	private Calendar dataDeIngresso;
+	
+	public Usuario(String nome) throws Exception{
+		if(!testaString(nome)) throw new Exception("Nome da disciplina invalido");
+	};
 
-	private Stude stude;
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) throws Exception {
+		if(!testaString(nome)) throw new Exception("Nome da disciplina invalido");
+		this.nome = nome;
+	}
 
-	private Disciplina disciplina;
+	public Calendar getDataDeIngresso() {
+		return dataDeIngresso;
+	}
 
-	private Cronograma cronograma;
-
-	private Collection<Disciplina> desempenho;
-
+	public boolean testaString(String string) {
+		return !(string == null || string.trim().equals(""));
+	}
 }
