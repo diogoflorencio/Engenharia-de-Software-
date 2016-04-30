@@ -6,7 +6,7 @@ public class Avancado implements MetodoDeEstudo {
  
 	public Avancado(){
 		intervalo = 10;
-		tempoDeEstudo = 30;
+		//tempoDeEstudo = 30;
 	}
 	
 	@Override
