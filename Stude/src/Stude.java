@@ -36,25 +36,11 @@ public class Stude {
 	public void removeDisciplina(String nome) throws Exception{
 		cronograma.removeDisciplina(new Disciplina(nome, null));
 	}
-	public void addNota(String nomeDisciplina, Double nota) throws Exception{
-		Disciplina d = cronograma.getDisciplina(nomeDisciplina);
-		d.addNota(nota);
-		cronograma.setDisciplina(d);
-	}
-	public void removeNota(String nomeDisciplina, int indiceDaNota) throws Exception{
-		Disciplina d = cronograma.getDisciplina(nomeDisciplina);
-		d.removeNota(indiceDaNota);
-		cronograma.setDisciplina(d);
-	}
 	
 	/*METODOS DO CONTEXTO DE DESEMPENHO*/
 	public HashMap<Disciplina, Double> desempenho(){
 		Desempenho d = new Desempenho();
 		return d.tempoDeEstudo(cronograma.getDisciplinas());
-	}
-	public float cre(){
-		Desempenho d = new Desempenho();
-		return d.calculaCRE(cronograma.getDisciplinas());
 	}
 	public void addTempoEstudo(String nomeDisciplina, int tempo) throws Exception{
 		Disciplina d = cronograma.getDisciplina(nomeDisciplina);
