@@ -1,13 +1,12 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.io.Serializable;
 
-public class Disciplina extends Exception{
-	
+public class Disciplina implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private double horasEstudadas;
-	private String cor;
+	private int cor;
 	private String nome;
 	
-	public Disciplina(String nome, String cor) throws Exception{
+	public Disciplina(String nome, int cor) throws Exception{
 		if(!testaString(nome)) throw new Exception("Nome da disciplina invalido");
 		this.nome = nome;
 		this.cor = cor;
@@ -22,10 +21,10 @@ public class Disciplina extends Exception{
 		this.nome = novoNome;
 	}
 	
-	public String getCor(){
+	public int getCor(){
 		return cor;
 	}
-	public void setCor(String cor){
+	public void setCor(int cor){
 		this.cor = cor; 
 	}
 	

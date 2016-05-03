@@ -1,5 +1,7 @@
-public class Regular implements MetodoDeEstudo {
-	
+import java.io.Serializable;
+
+public class Regular implements MetodoDeEstudo, Serializable {
+	private static final long serialVersionUID = 1L;
 	private int intervalo;
 	private int tempoDeEstudo;
 	

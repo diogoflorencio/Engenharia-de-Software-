@@ -7,8 +7,8 @@ public class Execucao {
 		try{
 		Stude s = new Stude("Diogo");
 		System.out.println(s.getusuario());
-		s.addDisciplina("ES", "Vermelho");
-		s.addDisciplina("SI2", "Preto");
+		s.addDisciplina("ES", 0);
+		s.addDisciplina("SI2", 0);
 		s.addTempoEstudo("ES", 150);
 		s.addTempoEstudo("ES", 150);
 		s.removeDisciplina("ES");

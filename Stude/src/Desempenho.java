@@ -1,9 +1,10 @@
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-public class Desempenho {
-	
+public class Desempenho implements Serializable{
+	private static final long serialVersionUID = 1L;
 	public Desempenho(){}
 	
 	public HashMap<Disciplina, Double> tempoDeEstudo(List<Disciplina> disciplinas){

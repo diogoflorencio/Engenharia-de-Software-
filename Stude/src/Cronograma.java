@@ -1,8 +1,9 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Cronograma {
-
+public class Cronograma implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private ArrayList<Disciplina> disciplinas;
 	
 	public Cronograma(){

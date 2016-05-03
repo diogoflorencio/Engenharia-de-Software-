@@ -1,13 +1,17 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import projetop2.utils.ArquivoDeDados;
 
 public class Stude {
 
 	private Usuario usuario;
 	private Cronograma cronograma;
 	private MetodoDeEstudo metodoDeEstudo;
+	private ArquivoDeDados<String> a;
 	
 	public Stude(String nomeUsuario) throws Exception{
+		a = new ArquivoDeDados<String>("arquivo");
+		a.salvaObjeto("a");
 		usuario = new Usuario(nomeUsuario);
 		cronograma = new Cronograma();
 		metodoDeEstudo = new Regular();
@@ -30,11 +34,11 @@ public class Stude {
 	public Disciplina getDisciplina(String nome){
 		return cronograma.getDisciplina(nome);
 	}
-	public void addDisciplina(String nome, String cor) throws Exception{
+	public void addDisciplina(String nome, int cor) throws Exception{
 		cronograma.addDisciplina(new Disciplina(nome, cor));
 	}
 	public void removeDisciplina(String nome) throws Exception{
-		cronograma.removeDisciplina(new Disciplina(nome, null));
+		cronograma.removeDisciplina(new Disciplina(nome, 0));
 	}
 	
 	/*METODOS DO CONTEXTO DE DESEMPENHO*/
