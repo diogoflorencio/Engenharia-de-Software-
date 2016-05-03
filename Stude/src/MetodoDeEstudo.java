@@ -1,7 +1,7 @@
 
 public interface MetodoDeEstudo {
-	
-	public int getTempo();
+
+	public int getTempoDeEstudo();
 
 	public int getIntervalo();
 }
