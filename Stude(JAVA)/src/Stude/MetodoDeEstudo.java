@@ -1,7 +1,8 @@
+package Stude;
 
 public interface MetodoDeEstudo {
-
-	public int getTempoDeEstudo();
+	
+	public int getTempo();
 
 	public int getIntervalo();
 }
