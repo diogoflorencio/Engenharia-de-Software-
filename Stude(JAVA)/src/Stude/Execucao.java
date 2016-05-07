@@ -6,17 +6,17 @@ public class Execucao {
 		try{
 		Stude s = new Stude("Diogo");
 	//	System.out.println(s.getusuario());
-//		s.addDisciplina("ES", 0);
+	//s.addDisciplina("ES", 0);
 //		s.salvar();
 	//	s.carrega();
-		s.addDisciplina("SI2", 0);
+	//	s.addDisciplina("SI2", 0);
 	//	s.removeDisciplina("SI2");
 	//	s.addTempoEstudo("ES", 150);
 	//	s.addTempoEstudo("ES", 150);
 	//	s.removeDisciplina("ES");
 	//	System.out.println(s.getusuario());
 	//	System.out.println(d.get(0).getNome());
-		s.salvar();
+	//	s.salvar();
 	System.out.println(s.getDisciplinas());
 		}catch (Exception e){
 			System.out.println(e.getMessage());

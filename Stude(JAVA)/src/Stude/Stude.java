@@ -8,37 +8,11 @@ public class Stude{
 	private Usuario usuario;
 	private Cronograma cronograma;
 	private MetodoDeEstudo metodoDeEstudo;
-	private ArquivoDeDados<Cronograma> fileCronograma;
-	private ArquivoDeDados<Usuario> fileUsuario;
-	private ArquivoDeDados<MetodoDeEstudo> fileMetodo;
 	
 	public Stude(String nomeUsuario) throws Exception{
-		fileUsuario = new ArquivoDeDados<Usuario>("usuario.stude");
-		fileCronograma = new ArquivoDeDados<Cronograma>("cronograma.stude");
-		fileMetodo = new ArquivoDeDados<MetodoDeEstudo>("metodo.stude");
-		try{
-			carrega();
-		}catch(Exception e){
 			usuario = new Usuario(nomeUsuario);
 			cronograma = new Cronograma();
 			metodoDeEstudo = new Regular();
-		}
-	}
-	private void carrega() throws ProjetoHelperExceptions{
-		usuario = fileUsuario.carregaObjetos();
-		cronograma = fileCronograma.carregaObjetos();
-		metodoDeEstudo = fileMetodo.carregaObjetos();
-	}
-	public void salvar() throws ProjetoHelperExceptions{
-		fileUsuario.salvaObjeto(usuario);
-		fileCronograma.salvaObjeto(cronograma);
-		fileMetodo.salvaObjeto(metodoDeEstudo);
-	}
-	
-	public void  delete() {
-		fileUsuario.limpaArquivo();
-		fileCronograma.limpaArquivo();
-		fileMetodo.limpaArquivo();
 	}
 	
 	/* METODOS DO CONTEXTO USUARIO*/
@@ -48,9 +22,7 @@ public class Stude{
 	public void setNomeUsuario(String nome)throws Exception{
 		usuario.setNome(nome);
 	}
-	public String dataDeIngresso(){
-		return usuario.getDataDeIngresso();
-	}
+	
 	/* METODOS DO CONTEXTO DISCIPLINA*/
 	public ArrayList<Disciplina> getDisciplinas(){
 		return cronograma.getDisciplinas();
@@ -64,7 +36,6 @@ public class Stude{
 	public void removeDisciplina(String nome) throws Exception{
 		cronograma.removeDisciplina(new Disciplina(nome, 0));
 	}
-	
 	/*METODOS DO CONTEXTO DE DESEMPENHO*/
 	public HashMap<Disciplina, Double> desempenho(){
 		Desempenho d = new Desempenho();

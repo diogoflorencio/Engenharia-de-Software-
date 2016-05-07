@@ -1,11 +1,10 @@
 package Stude;
-import java.io.Serializable;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-public class Desempenho implements Serializable{
-	private static final long serialVersionUID = 1L;
+public class Desempenho {
 	public Desempenho(){}
 	
 	public HashMap<Disciplina, Double> tempoDeEstudo(List<Disciplina> disciplinas){
