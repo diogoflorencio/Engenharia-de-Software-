@@ -2,8 +2,6 @@ package Stude;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import projetop2.utils.ArquivoDeDados;
-import projetop2.utils.ProjetoHelperExceptions;
 public class Stude{
 	private Usuario usuario;
 	private Cronograma cronograma;
@@ -16,7 +14,7 @@ public class Stude{
 	}
 	
 	/* METODOS DO CONTEXTO USUARIO*/
-	public Usuario getusuario(){
+	public Usuario getUsuario(){
 		return usuario;
 	}
 	public void setNomeUsuario(String nome)throws Exception{
@@ -38,8 +36,7 @@ public class Stude{
 	}
 	/*METODOS DO CONTEXTO DE DESEMPENHO*/
 	public HashMap<Disciplina, Double> desempenho(){
-		Desempenho d = new Desempenho();
-		return d.tempoDeEstudo(cronograma.getDisciplinas());
+		return Desempenho.tempoDeEstudo(cronograma.getDisciplinas());
 	}
 	public void addTempoEstudo(String nomeDisciplina, int tempo) throws Exception{
 		Disciplina d = cronograma.getDisciplina(nomeDisciplina);

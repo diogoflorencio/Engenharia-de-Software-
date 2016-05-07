@@ -5,8 +5,8 @@ public class Execucao {
 		//List<Disciplina> d;
 		try{
 		Stude s = new Stude("Diogo");
-	//	System.out.println(s.getusuario());
-	//s.addDisciplina("ES", 0);
+	//	System.out.println(s.getUsuario().getNome());
+	s.addDisciplina("ES", 0);
 //		s.salvar();
 	//	s.carrega();
 	//	s.addDisciplina("SI2", 0);
@@ -17,9 +17,9 @@ public class Execucao {
 	//	System.out.println(s.getusuario());
 	//	System.out.println(d.get(0).getNome());
 	//	s.salvar();
-	System.out.println(s.getDisciplinas());
+	//System.out.println(s.intervalo());
 		}catch (Exception e){
-			System.out.println(e.getMessage());
+			//System.out.println(e.getMessage());
 		}
 	}
 }

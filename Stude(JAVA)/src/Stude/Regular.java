@@ -1,13 +1,10 @@
 package Stude;
 
 public class Regular implements MetodoDeEstudo{
-	private int intervalo;
-	private int tempoDeEstudo;
+	private static int intervalo = 5;
+	private static int tempoDeEstudo = 15;
 	
-	public Regular(){
-		intervalo = 5;
-		tempoDeEstudo = 15;
-	}	
+	public Regular(){}
 	@Override
 	public int getTempo() {
 		return tempoDeEstudo;
