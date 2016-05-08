@@ -7,8 +7,6 @@ import org.junit.Test;
 public class StudeTest {
 
 	private Stude stude;
-	private Usuario usuario;
-	private Cronograma cronograma;
 	
 	@Before
 	public void setUp() throws Exception {

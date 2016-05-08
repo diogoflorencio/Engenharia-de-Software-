@@ -50,9 +50,7 @@ public class Stude {
 	}
 
 	public void addTempoEstudo(String nomeDisciplina, double tempo) throws Exception {
-		// Disciplina d = cronograma.getDisciplina(nomeDisciplina);
 		cronograma.getDisciplina(nomeDisciplina).addHorasDeEstudo(tempo);
-		// cronograma.setDisciplina(d);
 	}
 
 	/* METODOS DO CONTEXTO DE METODOS DE ESTUDOS */

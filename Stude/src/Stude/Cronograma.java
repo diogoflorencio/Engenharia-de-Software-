@@ -42,8 +42,4 @@ public class Cronograma {
 		return disciplinas.remove(getDisciplina(nome));
 	}
 
-//	public void setDisciplina(Disciplina d) throws Exception {
-//		removeDisciplina(d);
-//		addDisciplina(d);
-//	}
 }
