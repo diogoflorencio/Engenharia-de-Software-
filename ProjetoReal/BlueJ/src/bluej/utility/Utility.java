@@ -1068,7 +1068,7 @@ public class Utility
     /**
      * Break a quoted command-line string into separate arguments.
      */
-    private int skipWhiteSpace(String str, int i){
+    private static int skipWhiteSpace(String str, int i){
         int j = i;
         while (j < str.length() && Character.isWhitespace(str.charAt(j))) {
             j++;
@@ -1082,7 +1082,7 @@ public class Utility
         int i = 0;
         while (i < str.length()) {
             // Skip white space
-            i = skipeWhiteSpace(str, i);
+            i = skipWhiteSpace(str, i);
             
             StringBuffer arg = new StringBuffer();
             char c;

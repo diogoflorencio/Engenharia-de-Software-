@@ -273,9 +273,9 @@ public final class JavaLexer implements TokenStream
 
         boolean fpValid = true; // whether a subsequent dot would be valid.
                 // (will be set false for a non-decimal literal).
-        
+
+        rval = readNextChar();
         if (ch == '0' && ! dot) {
-            rval = readNextChar();
             if (rval == 'x' || rval == 'X') {
                 // hexadecimal
                 textBuffer.append((char) rval);
@@ -317,10 +317,8 @@ public final class JavaLexer implements TokenStream
                 } while (Character.isDigit((char) rval) || rval == '_');
                 fpValid = false;
             }
-            ch = (char) rval;
         }
         else {
-            rval = readNextChar();
             while (Character.isDigit((char) rval) || rval == '_') {
                 textBuffer.append((char) rval);
                 rval = readNextChar();
