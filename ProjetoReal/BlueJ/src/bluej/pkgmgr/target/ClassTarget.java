@@ -396,7 +396,7 @@ public class ClassTarget extends DependentTarget
      */
     protected void setRole(ClassRole newRole)
     {
-        if (role.getRoleName() != newRole.getRoleName()) {
+        if (!role.getRoleName().equals(newRole.getRoleName())) {
             role = newRole;
         }
     }
