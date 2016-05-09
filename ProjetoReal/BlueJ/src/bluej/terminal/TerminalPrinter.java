@@ -103,16 +103,15 @@ public class TerminalPrinter
                 
                 // workaround for strange problem on Mac:
                 // trying to print empty lines throws exception
-                if (line.length() == 0) {
-                    char[] nonBlank = new char[] {' '};
-                    Segment lineSeg = new Segment(nonBlank,0,1);
-                    x = Utilities.drawTabbedText(lineSeg, x, position, g, null, 0);
-                }
-                else {
-                    Segment lineSeg = new Segment(line.toCharArray(), 0, line.length());
+
+                char[] nonBlank = new char[] {' '};
+                Segment lineSeg = new Segment(nonBlank,0,1);
+                x = Utilities.drawTabbedText(lineSeg, x, position, g, null, 0);
+                if (line.length() != 0) {
+                    lineSeg = new Segment(line.toCharArray(), 0, line.length());
                     TabExpander tab = Utility.makeTabExpander(line, tabSize, fontMetrics);
-                    x = Utilities.drawTabbedText(lineSeg,x,position,g,tab,0);                    
-                } 
+                    x = Utilities.drawTabbedText(lineSeg,x,position,g,tab,0);
+                }
             }
    
             return Printable.PAGE_EXISTS;   // print the page

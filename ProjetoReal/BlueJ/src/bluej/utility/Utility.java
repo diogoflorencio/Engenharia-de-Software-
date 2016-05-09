@@ -996,6 +996,8 @@ public class Utility
         }
         return oPath;
     }
+
+    private
     
     /**
      * Convert an array of files into a classpath string that can be used to start a VM.
@@ -1066,16 +1068,21 @@ public class Utility
     /**
      * Break a quoted command-line string into separate arguments.
      */
-    public static List<String> dequoteCommandLine(String str)
-    {
+    private int skipWhiteSpace(String str, int i){
+        int j = i;
+        while (j < str.length() && Character.isWhitespace(str.charAt(j))) {
+            j++;
+        }
+        return j;
+    }
+
+    public static List<String> dequoteCommandLine(String str) {
         List<String> strings = new ArrayList<String>();
         
         int i = 0;
         while (i < str.length()) {
             // Skip white space
-            while (i < str.length() && Character.isWhitespace(str.charAt(i))) {
-                i++;
-            }
+            i = skipeWhiteSpace(str, i);
             
             StringBuffer arg = new StringBuffer();
             char c;
