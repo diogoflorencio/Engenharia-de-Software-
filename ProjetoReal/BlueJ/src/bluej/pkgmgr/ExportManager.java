@@ -186,8 +186,9 @@ final class ExportManager
                                JarOutputStream jStream, boolean includeSource, boolean includePkg, File outputFile)
         throws IOException
     {
+            File[] dir;
             if(sourceDir != null) {
-                File[] dir = sourceDir.listFiles();
+                dir = sourceDir.listFiles();
             }
             for(int i = 0; i < dir.length; i++) {
             if(dir[i].isDirectory()) {
